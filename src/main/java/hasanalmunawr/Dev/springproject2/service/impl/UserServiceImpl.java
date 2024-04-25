@@ -7,6 +7,7 @@ import hasanalmunawr.Dev.springproject2.repository.UserRepository;
 import hasanalmunawr.Dev.springproject2.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,12 @@ public class UserServiceImpl implements UserService {
     private final CredentialRepository credentialRepository;
     private final ConfirmationRepository confirmationRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ApplicationEventPublisher applicationEventPublisher;
+
     @Override
     public void createUser(String firstName, String lastName, String email, String password) {
+        var userEntity = userRepository.save( createNewUser(firstName, lastName, email, password));
+        
 
     }
 }
