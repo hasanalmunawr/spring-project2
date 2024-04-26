@@ -34,4 +34,6 @@ public class UserServiceImpl implements UserService {
     private UserEntity createNewUser(String firstName, String lastName, String email, String password) {
         return UserEntity.builder().build();
     }
+
+    private final String akun;
 }
