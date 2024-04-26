@@ -12,6 +12,8 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.jar.JarEntry;
+
 @Service
 @Transactional(rollbackOn = Exception.class)
 @RequiredArgsConstructor
@@ -35,5 +37,5 @@ public class UserServiceImpl implements UserService {
         return UserEntity.builder().build();
     }
 
-    private final String akun;
+    public JarEntry tom ;
 }
