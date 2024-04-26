@@ -1,5 +1,6 @@
 package hasanalmunawr.Dev.springproject2.service.impl;
 
+import hasanalmunawr.Dev.springproject2.entity.UserEntity;
 import hasanalmunawr.Dev.springproject2.repository.ConfirmationRepository;
 import hasanalmunawr.Dev.springproject2.repository.CredentialRepository;
 import hasanalmunawr.Dev.springproject2.repository.RoleRepository;
@@ -28,5 +29,9 @@ public class UserServiceImpl implements UserService {
         var userEntity = userRepository.save( createNewUser(firstName, lastName, email, password));
         
 
+    }
+
+    private UserEntity createNewUser(String firstName, String lastName, String email, String password) {
+        return UserEntity.builder().build();
     }
 }
