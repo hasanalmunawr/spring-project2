@@ -33,7 +33,7 @@ public class ConfirmationEntity extends Auditable {
     @JsonProperty("user_id")
     private UserEntity userEntity;
 
-    private String key = UUID.randomUUID().toString();
+    private final String key = UUID.randomUUID().toString();
 
 
 
